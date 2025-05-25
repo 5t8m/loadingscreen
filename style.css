@@ -1,41 +1,50 @@
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background-color: rgb(25, 25, 25);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .loader-container {
   text-align: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
 }
 
 .loader-title {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
 .loader-subtext {
   font-size: 0.9rem;
-  color: #555;
+  color: #777;
   margin-bottom: 2rem;
 }
 
-.progress-container {
+.progress-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  width: 300px;
-  margin: 0 auto;
 }
 
 .progress-bar {
-  width: 100%;
+  flex: 1;
   height: 16px;
-  background: #333;
+  background-color: #333;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -43,14 +52,14 @@ body {
 .progress-bar-fill {
   height: 100%;
   width: 0%;
-  background: #007BFF;
+  background-color: #007BFF;
   border-radius: 20px;
   transition: width 0.05s linear;
 }
 
 .progress-text {
-  min-width: 40px;
   font-size: 0.95rem;
+  min-width: 40px;
 }
 
 .success-text {
@@ -58,5 +67,5 @@ body {
   color: #00ff88;
   font-size: 1rem;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
