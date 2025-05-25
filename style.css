@@ -18,14 +18,22 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 1.2rem;
 }
 
-.progress-wrapper {
+.progress-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.progress-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  position: relative;
+  gap: 0.8rem;
 }
 
 .progress-bar {
@@ -58,10 +66,15 @@ body, html {
   user-select: none;
 }
 
-.progress-img {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  user-select: none;
-  pointer-events: none;
+.progress-percent {
+  font-size: 1rem;
+  color: white;
+  width: 50px;
+  text-align: left;
+}
+
+.powered-text {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.4rem;
 }
