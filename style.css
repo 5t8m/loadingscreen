@@ -1,39 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loading</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="loader-container">
-    <img src="wai.png" alt="anime girl" class="progress-img" />
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <div class="progress-row">
-      <div class="progress-bar">
-        <div class="progress-bar-fill" id="progress-fill"></div>
-        <div class="progress-label">Loading Waifu</div>
-      </div>
-      <div class="progress-percent" id="progress-text">0%</div>
-    </div>
+body, html {
+  height: 100%;
+  background-color: rgb(25, 25, 25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <div class="powered-text">Powered by Dev X</div>
-  </div>
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+}
 
-  <script>
-    const fill = document.getElementById("progress-fill");
-    const text = document.getElementById("progress-text");
-    let percent = 0;
-    const duration = 4000;
-    const intervalTime = duration / 100;
+.progress-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  margin-bottom: -7px; /* Moves image 0.7cm (~7px) up */
+}
 
-    const interval = setInterval(() => {
-      percent++;
-      fill.style.width = percent + "%";
-      text.textContent = percent + "%";
-      if (percent >= 100) clearInterval(interval);
-    }, intervalTime);
-  </script>
-</body>
-</html>
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.progress-bar {
+  width: 280px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 6px #00000088;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #007BFF;
+  border-radius: 20px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px #007bffaa;
+}
+
+.progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.95rem;
+  color: white;
+  pointer-events: none;
+  user-select: none;
+}
+
+.progress-percent {
+  font-size: 1rem;
+  color: dimgray;
+  width: 50px;
+  text-align: left;
+}
+
+.powered-text {
+  font-size: 0.85rem;
+  color: dimgray;
+  margin-top: 0.4rem;
+}
