@@ -28,7 +28,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
   line-height: 1;
 }
 
@@ -78,7 +78,7 @@ body, html {
 
 /* Group below the bar */
 .text-below-bar {
-  margin-top: 0.3rem;
+  margin-top: 0.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
