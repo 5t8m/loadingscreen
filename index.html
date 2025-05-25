@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loading</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="loader-container">
+<div class="loader-container">
+  <div class="loader-texts">
     <div class="loader-title">Loading</div>
     <div class="loader-subtext">Powered by Dev X</div>
-    <div class="progress-img-row">
-      <div class="progress-bar">
-        <div class="progress-bar-fill" id="progress-fill"></div>
-      </div>
-      <img src="wai.png" alt="wai icon" class="progress-img" />
-    </div>
-    <div class="progress-text" id="progress-text">0%</div>
-    <div class="success-text" id="success-text">Success!</div>
   </div>
 
-  <script>
-    const fill = document.getElementById("progress-fill");
-    const text = document.getElementById("progress-text");
-    const successText = document.getElementById("success-text");
+  <div class="progress-img-row">
+    <div class="progress-bar">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+    <img src="wai.png" alt="wai icon" class="progress-img" />
+  </div>
 
-    let percent = 0;
-    const duration = 4000;
-    const intervalTime = duration / 100;
-
-    const interval = setInterval(() => {
-      percent++;
-      fill.style.width = percent + "%";
-      text.textContent = percent + "%";
-      if (percent >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          successText.style.opacity = 1;
-        }, 1000);
-      }
-    }, intervalTime);
-  </script>
-</body>
-</html>
+  <div class="progress-text" id="progress-text">0%</div>
+  <div class="success-text" id="success-text">Success!</div>
+</div>
