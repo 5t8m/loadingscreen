@@ -5,62 +5,60 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
+  height: 100%;
   background-color: rgb(25, 25, 25);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .loader-container {
-  text-align: center;
   max-width: 600px;
   width: 90%;
   padding: 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.loader-texts {
-  /* No margin bottom, so no gap */
+  gap: 0.3rem; /* small gap between stacked elements */
 }
 
 .loader-title {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.8rem;
+  font-weight: 700;
   line-height: 1.1;
+  margin-bottom: 0;
 }
 
 .loader-subtext {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #777;
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0;
 }
 
-/* Remove margin-top or bottom from this container so no gap */
 .progress-img-row {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  /* Remove margin-bottom or margin-top */
+  margin-top: 0.4rem; /* slight gap below texts */
+  width: 100%;
+  max-width: 600px;
 }
 
-/* Progress bar styling */
 .progress-bar {
   flex: 1;
-  height: 20px;
+  height: 22px;
   background-color: #333;
   border-radius: 20px;
   overflow: hidden;
   min-width: 250px;
   max-width: 350px;
+  box-shadow: inset 0 0 5px #000000aa;
 }
 
 .progress-bar-fill {
@@ -69,28 +67,28 @@ body {
   background-color: #007BFF;
   border-radius: 20px;
   transition: width 0.05s linear;
+  box-shadow: 0 0 8px #007BFFaa;
 }
 
-/* Bigger image */
 .progress-img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
-  display: block;
+  user-select: none;
+  pointer-events: none;
 }
 
 .progress-text {
-  font-size: 1.25rem;
-  color: white;
-  margin-top: 0.5rem; /* some breathing space below bar */
+  font-size: 1.3rem;
   font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 .success-text {
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #00ff88;
-  font-size: 1.25rem;
   opacity: 0;
   transition: opacity 0.4s ease;
-  font-weight: 600;
 }
