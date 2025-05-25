@@ -26,9 +26,8 @@ body {
   justify-content: center;
 }
 
-/* Container for title and subtitle right above progress bar */
 .loader-texts {
-  margin-bottom: 0.25rem; /* small spacing */
+  /* No margin bottom, so no gap */
 }
 
 .loader-title {
@@ -43,14 +42,14 @@ body {
   margin-top: 0.15rem;
 }
 
-/* Flex container for progress bar and image */
+/* Remove margin-top or bottom from this container so no gap */
 .progress-img-row {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 0.25rem; /* tighten spacing */
+  /* Remove margin-bottom or margin-top */
 }
 
 /* Progress bar styling */
@@ -80,17 +79,15 @@ body {
   display: block;
 }
 
-/* Progress percent text just below progress bar */
 .progress-text {
   font-size: 1.25rem;
   color: white;
-  margin-top: 0.1rem; /* very tight */
+  margin-top: 0.5rem; /* some breathing space below bar */
   font-weight: 600;
 }
 
-/* Success text directly below progress text */
 .success-text {
-  margin-top: 0.1rem; /* very tight */
+  margin-top: 0.1rem;
   color: #00ff88;
   font-size: 1.25rem;
   opacity: 0;
