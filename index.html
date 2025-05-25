@@ -8,8 +8,11 @@
 </head>
 <body>
   <div class="loader-container">
-    <div class="loader-title">Loading</div>
-    <div class="loader-subtext">Powered by Dev X</div>
+    
+    <div class="text-above-bar">
+      <div class="loader-title">Loading</div>
+      <div class="loader-subtext">Powered by Dev X</div>
+    </div>
 
     <div class="progress-img-row">
       <div class="progress-bar">
@@ -18,8 +21,11 @@
       <img src="wai.png" alt="wai icon" class="progress-img" />
     </div>
 
-    <div class="progress-text" id="progress-text">0%</div>
-    <div class="success-text" id="success-text">Success!</div>
+    <div class="text-below-bar">
+      <div class="progress-text" id="progress-text">0%</div>
+      <div class="success-text" id="success-text">Success!</div>
+    </div>
+    
   </div>
 
   <script>
@@ -39,7 +45,7 @@
         clearInterval(interval);
         setTimeout(() => {
           successText.style.opacity = 1;
-        }, 1000);
+        }, 800);
       }
     }, intervalTime);
   </script>
