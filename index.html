@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title></title>
+  <title>Loading</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="loader-container">
     
     <div class="text-above-bar">
-      <div class="loader-title"></div>
-      <div class="loader-subtext"></div>
+      <div class="loader-title">Loading</div>
+      <div class="loader-subtext">Powered by Dev X</div>
     </div>
 
     <div class="progress-img-row">
@@ -22,8 +22,8 @@
     </div>
 
     <div class="text-below-bar">
-      <div class="progress-text" id="progress-text"></div>
-      <div class="success-text" id="success-text"></div>
+      <div class="progress-text" id="progress-text">0%</div>
+      <div class="success-text" id="success-text">Success!</div>
     </div>
     
   </div>
@@ -39,9 +39,9 @@
 
     const interval = setInterval(() => {
       percent++;
-      fill.style.width = percent + "";
-      text.textContent = percent + "";
-      if (percent >= ) {
+      fill.style.width = percent + "%";
+      text.textContent = percent + "%";
+      if (percent >= 100) {
         clearInterval(interval);
         setTimeout(() => {
           successText.style.opacity = 1;
