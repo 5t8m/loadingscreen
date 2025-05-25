@@ -39,11 +39,12 @@ body {
 }
 
 .progress-bar {
-  width: 100%;
+  width: 210px;
   height: 16px;
   background-color: #333;
   border-radius: 20px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .progress-bar-fill {
@@ -60,6 +61,24 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* Flex container for progress bar and image */
+.progress-img-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for the png image */
+.progress-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
 }
 
 .progress-text {
