@@ -17,34 +17,45 @@ body {
 
 .loader-container {
   text-align: center;
-  max-width: 400px;
-  width: 100%;
+  max-width: 600px;  /* a bit wider to fit big image and bar nicely */
+  width: 90%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 .loader-title {
-  font-size: 2rem;
+  font-size: 2.5rem; /* slightly bigger for balance */
   font-weight: 600;
-  margin-bottom: 0.25rem;
 }
 
 .loader-subtext {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #777;
-  margin-bottom: 2rem;
 }
 
+/* Flex container for progress bar and image */
+.progress-img-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* a bit bigger gap between image and bar */
+  margin-bottom: 0.75rem;
+}
+
+/* Progress bar styling */
 .progress-bar {
-  width: 210px;
-  height: 16px;
+  flex: 1;  /* make it flexible, fills remaining space */
+  height: 20px; /* slightly taller */
   background-color: #333;
   border-radius: 20px;
   overflow: hidden;
-  flex-shrink: 0;
+  min-width: 250px; /* keep minimum width */
+  max-width: 350px; /* max width to keep proportion */
 }
 
 .progress-bar-fill {
@@ -55,41 +66,26 @@ body {
   transition: width 0.05s linear;
 }
 
-.progress-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Flex container for progress bar and image */
-.progress-img-row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Style for the png image - increased size */
+/* Bigger image */
 .progress-img {
-  width: 200px;  /* increased from 100px to 200px */
-  height: 200px; /* increased from 100px to 200px */
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   display: block;
 }
 
 .progress-text {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: white;
+  margin-top: 0.5rem;
+  font-weight: 600;
 }
 
 .success-text {
   margin-top: 1.5rem;
   color: #00ff88;
-  font-size: 1rem;
+  font-size: 1.25rem;
   opacity: 0;
   transition: opacity 0.4s ease;
+  font-weight: 600;
 }
