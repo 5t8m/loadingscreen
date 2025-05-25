@@ -17,24 +17,30 @@ body {
 
 .loader-container {
   text-align: center;
-  max-width: 600px;  /* a bit wider to fit big image and bar nicely */
+  max-width: 600px;
   width: 90%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+}
+
+/* Container for title and subtitle right above progress bar */
+.loader-texts {
+  margin-bottom: 0.25rem; /* small spacing */
 }
 
 .loader-title {
-  font-size: 2.5rem; /* slightly bigger for balance */
+  font-size: 2.5rem;
   font-weight: 600;
+  line-height: 1.1;
 }
 
 .loader-subtext {
   font-size: 1rem;
   color: #777;
+  margin-top: 0.15rem;
 }
 
 /* Flex container for progress bar and image */
@@ -43,19 +49,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem; /* a bit bigger gap between image and bar */
-  margin-bottom: 0.75rem;
+  gap: 1.5rem;
+  margin-bottom: 0.25rem; /* tighten spacing */
 }
 
 /* Progress bar styling */
 .progress-bar {
-  flex: 1;  /* make it flexible, fills remaining space */
-  height: 20px; /* slightly taller */
+  flex: 1;
+  height: 20px;
   background-color: #333;
   border-radius: 20px;
   overflow: hidden;
-  min-width: 250px; /* keep minimum width */
-  max-width: 350px; /* max width to keep proportion */
+  min-width: 250px;
+  max-width: 350px;
 }
 
 .progress-bar-fill {
@@ -74,15 +80,17 @@ body {
   display: block;
 }
 
+/* Progress percent text just below progress bar */
 .progress-text {
   font-size: 1.25rem;
   color: white;
-  margin-top: 0.5rem;
+  margin-top: 0.1rem; /* very tight */
   font-weight: 600;
 }
 
+/* Success text directly below progress text */
 .success-text {
-  margin-top: 1.5rem;
+  margin-top: 0.1rem; /* very tight */
   color: #00ff88;
   font-size: 1.25rem;
   opacity: 0;
