@@ -8,31 +8,17 @@
 </head>
 <body>
   <div class="loader-container">
-    
-    <div class="text-above-bar">
-      <div class="loader-title">Loading</div>
-      <div class="loader-subtext">Powered by Dev X</div>
-    </div>
-
-    <div class="progress-img-row">
+    <div class="progress-wrapper">
       <div class="progress-bar">
         <div class="progress-bar-fill" id="progress-fill"></div>
+        <div class="progress-label">Loading Waifu</div>
       </div>
-      <img src="wai.png" alt="wai icon" class="progress-img" />
+      <img src="wai.png" alt="anime girl" class="progress-img" />
     </div>
-
-    <div class="text-below-bar">
-      <div class="progress-text" id="progress-text">0%</div>
-      <div class="success-text" id="success-text">Success!</div>
-    </div>
-    
   </div>
 
   <script>
     const fill = document.getElementById("progress-fill");
-    const text = document.getElementById("progress-text");
-    const successText = document.getElementById("success-text");
-
     let percent = 0;
     const duration = 4000;
     const intervalTime = duration / 100;
@@ -40,13 +26,7 @@
     const interval = setInterval(() => {
       percent++;
       fill.style.width = percent + "%";
-      text.textContent = percent + "%";
-      if (percent >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          successText.style.opacity = 1;
-        }, 800);
-      }
+      if (percent >= 100) clearInterval(interval);
     }, intervalTime);
   </script>
 </body>
