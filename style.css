@@ -73,10 +73,10 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Style for the png image */
+/* Style for the png image - increased size */
 .progress-img {
-  width: 100px;
-  height: 100px;
+  width: 200px;  /* increased from 100px to 200px */
+  height: 200px; /* increased from 100px to 200px */
   object-fit: contain;
   display: block;
 }
