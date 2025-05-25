@@ -39,9 +39,9 @@
 
     const interval = setInterval(() => {
       percent++;
-      fill.style.width = percent + "%";
-      text.textContent = percent + "%";
-      if (percent >= 100) {
+      fill.style.width = percent + "";
+      text.textContent = percent + "";
+      if (percent >= ) {
         clearInterval(interval);
         setTimeout(() => {
           successText.style.opacity = 1;
