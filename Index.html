@@ -4,62 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Loading</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: rgb(25, 25, 25);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .loader-container {
-      text-align: center;
-    }
-
-    .loader-title {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .loader-subtext {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    .progress-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      width: 300px;
-      margin: 0 auto;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 16px;
-      background: #333;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: #007BFF;
-      border-radius: 20px;
-      transition: width 0.3s ease;
-    }
-
-    .progress-text {
-      min-width: 40px;
-      font-size: 0.95rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="loader-container">
@@ -71,22 +16,29 @@
       </div>
       <div class="progress-text" id="progress-text">0%</div>
     </div>
+    <div class="success-text" id="success-text">Success!</div>
   </div>
 
   <script>
-    let percent = 0;
     const fill = document.getElementById("progress-fill");
     const text = document.getElementById("progress-text");
+    const successText = document.getElementById("success-text");
+
+    let percent = 0;
+    const duration = 4000;
+    const intervalTime = duration / 100;
 
     const interval = setInterval(() => {
+      percent++;
+      fill.style.width = percent + "%";
+      text.textContent = percent + "%";
       if (percent >= 100) {
         clearInterval(interval);
-      } else {
-        percent++;
-        fill.style.width = percent + "%";
-        text.textContent = percent + "%";
+        setTimeout(() => {
+          successText.style.opacity = 1;
+        }, 1000);
       }
-    }, 50);
+    }, intervalTime);
   </script>
 </body>
 </html>
